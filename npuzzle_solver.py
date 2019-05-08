@@ -1,6 +1,7 @@
 import argparse
 from math import sqrt
 
+
 from node_class import Node
 from algo_class import Algo, Idastar
 from visu import Visu
