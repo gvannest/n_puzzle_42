@@ -1,3 +1,4 @@
+
 class Node:
     """
     Class which represents a node of our graph, i.e a state of the n-puzzle grid.
