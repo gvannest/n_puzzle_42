@@ -26,7 +26,7 @@ def generate_nodes():
 
 
 def test_manhattan_heuristic(generate_nodes):
-    assert generate_nodes[0].h_calc('manhattan') == 11
+    assert generate_nodes[0].h_calc('manhattan') == 10
     assert generate_nodes[1].h_calc('manhattan') == 11
     assert generate_nodes[2].h_calc('manhattan') == 10
     assert generate_nodes[3].h_calc('manhattan') == 10
