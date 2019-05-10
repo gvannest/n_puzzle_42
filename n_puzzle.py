@@ -1,6 +1,5 @@
 import argparse, pytest, sys 
 from parsing import process_file
-from tests import test_this_shit
 from termcolor import cprint, colored
 from npuzzle_solver import main as solve
 import random

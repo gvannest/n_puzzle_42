@@ -6,8 +6,8 @@ from node_class import Node
 
 class Visu:
     TILESIZE = 80
-    WINDOWWIDTH = 840
-    WINDOWHEIGHT = 680
+    WINDOWWIDTH = 940
+    WINDOWHEIGHT = 780
     BLANK = None
 
     BLACK = (0, 0, 0)
@@ -132,7 +132,7 @@ class Visu:
         ]
         for i,item in enumerate(infos):
             info_surf, info_rect = self.makeText(item, Visu.MESSAGECOLOR, Visu.BGCOLOR,
-                                                 Visu.WINDOWWIDTH - self.YMARGIN + 20, 40 + i * 40, info=1)
+                                                 Visu.WINDOWWIDTH - self.YMARGIN + 10, 40 + i * 40, info=1)
             self.DISPLAYSURF.blit(info_surf, info_rect)
 
 

@@ -1,6 +1,7 @@
 import sys
-from objects import Taquin
+
 from termcolor import colored
+from math import sqrt
 
 def error_handling(e):
     print(colored(e, 'red'))
@@ -35,12 +36,12 @@ def is_solvable(flat_grid, grid_size):
             return True
     return False
 
-def check_integrity(t):
-    if len(t.numbers) != len(set(t.numbers)):
+def check_integrity(numbers):
+    size = int(sqrt(len(numbers)))
+    if len(numbers) != len(set(numbers)):
         error_handling("[ERROR]: Duplicate values")
-    if set(t.numbers) != set(range(t.size**2)):
+    if set(numbers) != set(range(size**2)):
         error_handling("[ERROR]: Weird number suite")
-    #t.g = [t.numbers[i:i+t.size] for i in range(0, len(t.numbers), t.size)]
-    if not is_solvable(t.numbers, t.size):
+    if not is_solvable(numbers, size):
         error_handling("[ERROR]: Can't be done")
-    return t.numbers
+    return numbers

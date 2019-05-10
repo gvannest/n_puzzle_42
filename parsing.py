@@ -1,6 +1,5 @@
 import os, re
 from integrity import *
-from objects import Taquin
 
 
 def read_file(filename):
@@ -21,8 +20,6 @@ def process_file(filename):
     taquin = read_file(filename)
     return check_integrity(taquin)
 
-
-# parse lines up to get size of the taquin. Then retrieve the lines.. ? 
 def get_size(line):
     match = re.match(r"^(\d+\s*)(?!.+^#)(#.*)?$", line) or None
     size = 0
@@ -66,18 +63,19 @@ def parse_file(f):
             - no given size
             - give size = 0
     """
-    t = Taquin()
-    data = []
+
+    numbers = []
+    size = 0
     for line in f:
         line = line.strip()
         if not line:
             continue
         elif line[0] == '#':
             continue
-        elif t.size == 0:
-            t.size = get_size(line)
+        elif size == 0:
+            size = get_size(line)
         elif line != '':
-            t.numbers.extend(get_line(t.size, line))
-    if t.size == 0 or len(t.numbers) != t.size**2:
+            numbers.extend(get_line(size, line))
+    if size == 0 or len(numbers) != size**2:
         error_handling("[PARSING ERROR]: Parsing error")
-    return t
+    return numbers
