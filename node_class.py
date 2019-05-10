@@ -1,4 +1,3 @@
-
 class Node:
     """
     Class which represents a node of our graph, i.e a state of the n-puzzle grid.
@@ -26,7 +25,7 @@ class Node:
         self.chg_i = chg_i
         self.conflict = 0
         self.h = self.h_calc(Node.h_method) if Node.h_algo != 'uniformed_cost' else 0
-        self.g = g if Node.h_algo != 'GBFS' else 0
+        self.g = g if Node.h_algo != 'gbfs' else 0
         self.f = self.h + self.g
 
     def is_final(self):

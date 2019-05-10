@@ -127,7 +127,8 @@ class Visu:
         infos = [
             "Number of moves : {}".format(len(self.algo.path) - 1),
             "Time complexity : {}".format(self.algo.selected_nodes),
-            "Space complexity : {}".format(self.algo.memory_state)
+            "Space complexity : {}".format(self.algo.memory_state),
+            "Time elapsed : {:.3f} s".format(self.algo.time)
         ]
         for i,item in enumerate(infos):
             info_surf, info_rect = self.makeText(item, Visu.MESSAGECOLOR, Visu.BGCOLOR,

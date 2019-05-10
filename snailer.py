@@ -49,7 +49,7 @@ def create_success_grid(grid_size):
             if y - 1 >= 0 and l[y - 1][x] != '':
                 break
 
-    return l
+    return [x for y in l for x in y]
 
 def grid_to_snail(grid, grid_size):
     l = copy.deepcopy(grid)

@@ -32,6 +32,7 @@ class Algo:
         self.selected_nodes = 1
         self.max_memory = 1
         self.path = deque()
+        self.time = 0
 
     def push_to_heap(self, node):
         """Adding an node to our priority queue"""

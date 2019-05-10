@@ -3,6 +3,6 @@ class Taquin():
     success_grid = []
     str_success_grid = ""
     size = 0
-    g = []
+    g= []
     str_grid = ""
-
+    numbers = []

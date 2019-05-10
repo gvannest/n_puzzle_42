@@ -1,4 +1,4 @@
-import os, sys, ipdb, pytest
+import os, sys, pytest
 from termcolor import cprint, colored
 from parsing import process_file
 

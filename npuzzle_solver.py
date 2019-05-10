@@ -1,23 +1,26 @@
-import argparse
+import time
+
 from math import sqrt
 
-
+from snailer import create_success_grid
 from node_class import Node
 from algo_class import Algo, Idastar
 from visu import Visu
-import heapq
 
-def print_results(astar):
+def print_results(algo, detail):
     """ Print the output of the search algorithm, including time and space complexity"""
-    for node in astar.path:
-        print(node)
+    if detail:
+        for node in algo.path:
+            print(node)
 
     print("=======================")
-    print('Number of moves from initial to final state :', len(astar.path) - 1)
+    print('Number of moves from initial to final state :', len(algo.path) - 1)
     print("=======================")
-    print('Time complexity (number of selected nodes) :', astar.selected_nodes)
+    print('Time complexity (number of selected nodes) :', algo.selected_nodes)
     print("=======================")
-    print('Space complexity (max states in memory at a point in time) :', astar.max_memory)
+    print('Space complexity (max states in memory at a point in time) :', algo.max_memory)
+    print("=======================")
+    print('Solving time : {:.3f} s'.format(algo.time))
 
     return None
 
@@ -37,10 +40,8 @@ def ida_star(node, algo):
         while True:
             algo.path = [node]
             algo.closed_set = {tuple(node.grid)}
-            print("While TRUE")
             t = search(threshold)
             if t == "FOUND":
-                print("Instance Node found, ggwp")
                 return None
             threshold = t
             algo.clear()
@@ -75,7 +76,7 @@ def ida_star(node, algo):
 
 def search_algo(node, algo):
     """
-    Function which implements our search algorithm : A*, GBFS or uniform_cost.
+    Function which implements our search algorithm : A*, gbfs or uniform_cost.
 
     :param node: node which will be treated in this instance of the function
     :param algo: our search algorithm objects which stores relevant informations about the search process
@@ -96,51 +97,29 @@ def search_algo(node, algo):
         node = node.parent
     return None
 
-
-def parsing():
-    parser = argparse.ArgumentParser()
-    parser.add_argument('-m', '--method',
-                        type=str,
-                        choices=['manhattan', 'linear_conflict', 'misplaced_tiles'],
-                        help="Method to be used for heuristic determination.",
-                        default='misplaced_tiles')
-    parser.add_argument('-a', '--algo',
-                        type=str,
-                        choices=['astar', 'GBFS', 'uniformed_cost', 'ida_star'],
-                        help="Algorithm used to solve the n-puzzle.",
-                        default='uniformed_cost')
-    parser.add_argument('-v', '--visu',
-                        help="Show the results as an interactive game",
-                        action='store_true')
-    args = parser.parse_args()
-
-    return args
-
-
-def main(grid):
-
-    args = parsing()
-
+def main(grid, args):
     grid_size = int(sqrt(len(grid)))
-    Node.final_grid = [1,2,3,8,0,4,7,6,5]
+    Node.final_grid = create_success_grid(grid_size)
     Node.size = grid_size
     Node.h_method = args.method
     Node.h_algo = args.algo
 
     initial_node = Node(grid=grid, g=0, parent=None)
+    start = time.time()
     if args.algo == 'ida_star':
         algo = Idastar()
-        print("IDA")
         ida_star(initial_node, algo)
     else:
         algo = Algo()
         search_algo(initial_node, algo)
+    end = time.time()
+    algo.time = end - start
 
     if args.visu:
         visu = Visu(algo)
         visu.play()
     else:
-        print_results(algo)
+        print_results(algo, args.detail)
     return None
 
 
