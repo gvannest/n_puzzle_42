@@ -11,4 +11,4 @@ The goal is to obtain the final sorted npuzzle by swapping a tile with the blank
 
 starting 8-puzzle           |   goal 8-puzzle       
 :--------------------------:|:------------------------------:|
-<img src="imgs/8puzzle_start.png" alt="starting 8-puzzle" width="200"/> | <img src="imgs/8puzzle_end.png" alt="ending 8-puzzle" width="200"/>
+<img src="img/8puzzle_start.png" alt="starting 8-puzzle" width="200"/> | <img src="img/8puzzle_end.png" alt="ending 8-puzzle" width="200"/>
