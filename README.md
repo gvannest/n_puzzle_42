@@ -12,3 +12,9 @@ The goal is to obtain the final sorted npuzzle by swapping a tile with the blank
 starting 8-puzzle           |   goal 8-puzzle       
 :--------------------------:|:------------------------------:|
 <img src="img/8puzzle_start.png" alt="starting 8-puzzle" width="200"/> | <img src="img/8puzzle_end.png" alt="ending 8-puzzle" width="200"/>
+
+### Usage
+
+```
+python3 n_puzzle.py [-a astar|idastar|uniform|greedy] [-m manhattan|linear_conflict|misplaced_tiles] [-g n] -f puzzle_file [-v]
+```
