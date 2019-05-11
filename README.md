@@ -38,3 +38,4 @@ Short flag       | Long flag              | Description
 ### Example
 ***
 <img src="img/Output_1.png" alt="solution first steps" width="500"/>
+<img src="img/Output_2.png" alt="solution last steps" width="500"/>
