@@ -27,7 +27,7 @@ Short flag       | Long flag              | Description
   -d             | --detail               |     Outputs detailed path chosen by the algorithm
   -f FILENAME    | --filename FILENAME    |     Gives a text file containing a puzzle to solve
   -g INT         | --generator INT        |    Generates a solvable puzzle of size {int} 
-  -m METHOD      | --method METHOD        |    Method to be used for heuristic calculation. Default is misplaced_tiles
-  -a ALGO        | --algo ALGO            |    Algorithm used to solve the n-puzzle. Default is uniformed_cost
+  -m METHOD      | --method METHOD        |    Method to be used for heuristic calculation. Default is `misplaced_tiles`
+  -a ALGO        | --algo ALGO            |    Algorithm used to solve the n-puzzle. Default is `uniformed_cost`
   -v             | --visu                 |    Show the results as a GUI
 
