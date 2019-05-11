@@ -16,5 +16,18 @@ starting 8-puzzle           |   goal 8-puzzle
 ### Usage
 
 ```
-python3 n_puzzle.py [-a astar|idastar|uniform|greedy] [-m manhattan|linear_conflict|misplaced_tiles] [-g n] -f puzzle_file [-v]
+python3 n_puzzle.py [-h] [-d] [-a astar|idastar|uniform|greedy] [-m manhattan|linear_conflict|misplaced_tiles] [-g n] -f puzzle_file [-v]
 ```
+
+**Arguments**
+
+Short flag       | Long flag              | Description
+:----------------|:-----------------------| :---------------------------|
+  -h             | --help                 |    Show help message
+  -d             | --detail               |     Outputs detailed path chosen by the algorithm
+  -f FILENAME    | --filename FILENAME    |     Gives a text file containing a puzzle to solve
+  -g INT         | --generator INT        |    Generates a solvable puzzle of size {int} 
+  -m METHOD      | --method METHOD        |    Method to be used for heuristic calculation. Default is misplaced_tiles
+  -a ALGO        | --algo ALGO            |    Algorithm used to solve the n-puzzle. Default is uniformed_cost
+  -v             | --visu                 |    Show the results as a GUI
+
