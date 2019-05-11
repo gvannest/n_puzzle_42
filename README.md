@@ -9,17 +9,21 @@ The npuzzle game consists of a matrix with 8 filled tiles and 1 blank area.
 A few or all the filled tiles can be misplaced.
 The goal is to obtain the final sorted npuzzle by swapping a tile with the blank area.
 
+Unlike the most common version of the n-puzzle game, the aimed puzzle of this project forms a snail around the center,
+as represented below:
+
 starting 8-puzzle           |   goal 8-puzzle       
 :--------------------------:|:------------------------------:|
 <img src="img/8puzzle_start.png" alt="starting 8-puzzle" width="200"/> | <img src="img/8puzzle_end.png" alt="ending 8-puzzle" width="200"/>
 
 ### Usage
+***
 
 ```
-python3 n_puzzle.py [-h] [-d] [-a astar|idastar|uniform|greedy] [-m manhattan|linear_conflict|misplaced_tiles] [-g n] -f puzzle_file [-v]
+python3 n_puzzle.py [-h] [-d] [-a astar|ida_star|uniform|greedy] [-m manhattan|linear_conflict|misplaced_tiles] [-g n] -f puzzle_file [-v]
 ```
 
-**Arguments**
+Arguments :
 
 Short flag       | Long flag              | Description
 :----------------|:-----------------------| :---------------------------|
@@ -31,3 +35,6 @@ Short flag       | Long flag              | Description
   -a ALGO        | --algo ALGO            |    Algorithm used to solve the n-puzzle. Default is `uniformed_cost`
   -v             | --visu                 |    Show the results as a GUI
 
+### Example
+***
+<img src="img/Output_1.png" alt="solution first steps" width="200"/> | <img src="img/Output_2.png" alt="solution last steps" width="200"/>
