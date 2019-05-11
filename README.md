@@ -1,3 +1,6 @@
+[![Python 3.7](https://img.shields.io/badge/python-3.7-blue.svg)](https://www.python.org/downloads/release/python-360/)
+[![Build Status](https://travis-ci.org/gvannest/n_puzzle_42.svg?branch=master)](https://travis-ci.org/gvannest/n_puzzle_42)
+
 # N-puzzle
 
 N-puzzle is a project as part of the 42 algorithmic curriculum.
