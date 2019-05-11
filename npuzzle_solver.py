@@ -7,6 +7,7 @@ from node_class import Node
 from algo_class import Algo, Idastar
 from visu import Visu
 
+
 def print_results(algo, detail):
     """ Print the output of the search algorithm, including time and space complexity"""
     if detail:
@@ -23,6 +24,7 @@ def print_results(algo, detail):
     print('Solving time : {:.3f} s'.format(algo.time))
 
     return None
+
 
 def ida_star(node, algo):
     """
@@ -49,8 +51,10 @@ def ida_star(node, algo):
     def search(threshold):
             min = -1
             node = algo.path[-1]
-            if node.f > threshold: return node.f
-            if node.is_final(): return "FOUND"
+            if node.f > threshold:
+                return node.f
+            if node.is_final():
+                return "FOUND"
             queue = []
             for d in directions:
                 new_node = node.move(d, algo)

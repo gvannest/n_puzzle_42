@@ -1,13 +1,14 @@
 import heapq
 from collections import deque
 
+
 class Algo:
     """
     Class representing our A* algorithm.
 
     Attributes:
 
-        opened_heap (heapq): the priority queue, storing the nodes to be visited, sorted according to their
+        opened_heap (heapq): the priority queue, storing the nodes to be visited,sorted according to their
                              estimated distance to the final node (g + h)
 
         closed_list (list[list]): list of already visited (and treated nodes). Nodes are all differents
@@ -86,4 +87,3 @@ class Idastar(Algo):
         self.closed_set = set()
         self.path = deque()
         self.memory_state = 1
-

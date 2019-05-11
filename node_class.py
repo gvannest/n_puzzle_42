@@ -48,12 +48,11 @@ class Node:
         def misplaced_tiles():
             """Calculate the number of tiles which are misplaced on the current grid"""
             tiles = 0
-            for c,f in zip(self.grid, Node.final_grid):
+            for c, f in zip(self.grid, Node.final_grid):
                 if c:
                     if c - f:
                         tiles += 1
             return tiles
-
 
         def manhattan_distance(c_idx, f_idx):
             """ Calculate the Manhattan distance between current and final position"""
@@ -105,7 +104,7 @@ class Node:
                     if c_idx // Node.size == f_idx // Node.size and c_idx % Node.size != (Node.size - 1):
                         i = c_idx
                         curr_ln = []
-                        while i // Node.size == c_idx // Node.size: # tant qu'on est sur la meme ligne
+                        while i // Node.size == c_idx // Node.size:
                             curr_ln.append(self.grid[i])
                             i += 1
                         i = (f_idx // Node.size) * Node.size

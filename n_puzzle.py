@@ -1,9 +1,11 @@
-import argparse, pytest, sys 
+import argparse
+import sys
 from parsing import process_file
 from termcolor import cprint, colored
 from npuzzle_solver import main as solve
 import random
 from integrity import is_solvable
+
 
 def generator(size):
     while True:
@@ -12,6 +14,7 @@ def generator(size):
         if is_solvable(grid, size):
             break
     return grid
+
 
 def main():
     parser = argparse.ArgumentParser(description="N-puzzle Solver")
@@ -39,7 +42,6 @@ def main():
                         help="Detailed output",
                         action='store_true')
 
-
     args = parser.parse_args()
     if not args.filename and not args.generator:
         cprint("ERROR. filename or generator needed. use -h for help", 'red')
@@ -52,7 +54,8 @@ def main():
         cprint("Grid generated", 'green')
 
     cprint("Trying to solve...   %s" % grid, 'green')
-    solve(grid, args) 
+    solve(grid, args)
+
 
 if __name__ == '__main__':
     main()
